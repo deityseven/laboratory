@@ -5,6 +5,7 @@ int main(int argc, char *argv[])
 {
     //临时目录
     std::filesystem::path tempDirectory = std::filesystem::temp_directory_path();
+    std::cout << "tempDirectory : " << tempDirectory << std::endl;
     
     // 当前目录
     std::filesystem::path currentPath = std::filesystem::current_path();
