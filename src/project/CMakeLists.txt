@@ -1,2 +1,3 @@
 ADD_SUBDIRECTORY(coroutine)
 ADD_SUBDIRECTORY(filesystem)
+ADD_SUBDIRECTORY(ansic)
