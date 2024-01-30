@@ -1,0 +1,18 @@
+#ifndef TEMPLATE_METHOD_STRUCT_H
+#define TEMPLATE_METHOD_STRUCT_H
+
+typedef void (*virtualFunction)(void* this);
+
+struct abstract
+{
+    virtualFunction virtualFunction0;
+    virtualFunction virtualFunction1;
+};
+
+struct concrete
+{
+    struct abstract super;
+    int var;
+};
+
+#endif //TEMPLATE_METHOD_STRUCT_H

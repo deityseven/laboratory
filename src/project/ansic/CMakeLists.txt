@@ -1,8 +1,14 @@
 project(ansic)
 
-#C++标准 
+#C标准
 set(CMAKE_C_STANDARD 90)
 set(CMAKE_C_STANDARD_REQUIRED ON)
+
+set(TEMPLATE_METHOD_SRC
+    template-method.h
+    template-method.c
+    template-method.struct
+)
 
 set(SINGLETON_SRC
     singleton.h
@@ -29,6 +35,7 @@ set(SRCS
 	${PERSON_SRC}
 	${MAN_SRC}
 	${SINGLETON_SRC}
+	${TEMPLATE_METHOD_SRC}
 )
 
 #筛选显示
@@ -47,6 +54,9 @@ link_directories(
 
 #预编译宏
 add_definitions(-Dnullptr=0)
+add_definitions(-Dbool=__u_char)
+add_definitions(-Dtrue=1)
+add_definitions(-Dfalse=0)
 
 if(WIN32)
 #链接库

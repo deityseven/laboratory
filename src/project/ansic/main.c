@@ -2,6 +2,7 @@
 //#include "person.h"
 #include "man.h"
 #include "singleton.h"
+#include "template-method.h"
 
 void testPerson()
 {
@@ -47,9 +48,16 @@ void testSingleton()
     printf("ins = %d, ins2 = %d\n", ins, ins2);
 }
 
+void testTemplateMethod()
+{
+    Abstract* ins = (Abstract*)Concrete_new_constructor_default();
+    Abstract_template_method(ins);
+}
 int main(int argc, char *argv[])
 {
     //testVirtual();
-    testSingleton();
+    //testSingleton();
+    testTemplateMethod();
+
 	return 0;
 }
