@@ -1,5 +1,7 @@
 #include "singleton.struct"
 #include "singleton.h"
+#include <stdlib.h>
+#include <stdio.h>
 
 // Man_constructor
 void Singleton_constructor_default(Singleton* this)
