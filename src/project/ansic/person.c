@@ -1,23 +1,31 @@
 #include "person.h"
+#include "person_define.h"
 #include <stdio.h>
 #include <stdlib.h>
 
-struct person
+void Person_constructor_default(Person* this)
 {
-    unsigned int age;
-};
+    this->age = 0;
+    this->say = Person_say;
+}
 
-Person* Person_constructor_default()
+void Person_constructor_age(Person* this, unsigned int age)
+{
+    Person_constructor_default(this);
+    this->age = age;
+}
+
+Person* Person_new_constructor_default()
 {
     Person* this = (Person*)malloc(sizeof(struct person));
-    this->age = 0;
+    Person_constructor_default(this);
     return this;
 }
 
-Person* Person_constructor_age(unsigned int age)
+Person* Person_new_constructor_age(unsigned int age)
 {
     Person* this = (Person*)malloc(sizeof(struct person));
-    this->age = age;
+    Person_constructor_age(this, age);
     return this;
 }
 

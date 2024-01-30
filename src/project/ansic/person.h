@@ -4,8 +4,12 @@
 typedef struct person Person;
 
 // Person_constructor
-Person* Person_constructor_default();
-Person* Person_constructor_age(unsigned int age);
+void Person_constructor_default(Person* this);
+void Person_constructor_age(Person* this, unsigned int age);
+
+// Person_new_constructor
+Person* Person_new_constructor_default();
+Person* Person_new_constructor_age(unsigned int age);
 
 // Person_destructor
 void Person_destructor(Person* this);

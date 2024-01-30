@@ -4,9 +4,10 @@ project(ansic)
 set(CMAKE_C_STANDARD 90)
 set(CMAKE_C_STANDARD_REQUIRED ON)
 
-set(VIRTUAL_SRC
-    virtualMan.h
-    virtualMan.c
+set(SINGLETON_SRC
+    singleton.h
+    singleton.c
+    singleton.struct
 )
 
 set(MAN_SRC
@@ -27,7 +28,7 @@ set(SRCS
 	${MAIN_SRC}
 	${PERSON_SRC}
 	${MAN_SRC}
-	${VIRTUAL_SRC}
+	${SINGLETON_SRC}
 )
 
 #筛选显示
@@ -45,7 +46,7 @@ link_directories(
 )
 
 #预编译宏
-#add_definitions(XXXX)
+add_definitions(-Dnullptr=0)
 
 if(WIN32)
 #链接库

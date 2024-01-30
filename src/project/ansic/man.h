@@ -1,10 +1,15 @@
 #ifndef MAN_H
 #define MAN_H
 
+#include "person.h"
+
 typedef struct man Man;
 
 // Man_constructor
-Man* Man_constructor_default();
+void Man_constructor_default(Man* this);
+
+// Man_new_constructor
+Man* Man_new_constructor_default();
 
 // Man_destructor
 void Man_destructor(Man* this);

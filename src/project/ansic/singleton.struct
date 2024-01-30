@@ -1,0 +1,9 @@
+#ifndef SINGLETON_STRUCT_H
+#define SINGLETON_STRUCT_H
+
+struct singleton
+{
+    int var;
+};
+
+#endif //SINGLETON_STRUCT_H

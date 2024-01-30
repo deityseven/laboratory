@@ -1,31 +1,55 @@
 #include <stdio.h>
-#include "person.h"
+//#include "person.h"
 #include "man.h"
-#include "virtualMan.h"
+#include "singleton.h"
 
 void testPerson()
 {
-    Person* p = Person_constructor_age(80);
+    Person* p = Person_new_constructor_age(80);
     Person_say(p);
     Person_destructor(p);
 }
 
 void testMan()
 {
-    Man* man = Man_constructor_default();
+    Man* man = Man_new_constructor_default();
     Man_say(man);
     Man_destructor(man);
 }
 
 void testVirtual()
 {
-    struct B b;
-    b.super.eat = B_eat;
-    b.super.eat(&b);
+    Man* m = Man_new_constructor_default();
+    Person_say((Person*)m);
+}
+
+int* staticVariable()
+{
+    static int a;
+    printf("a = %d\n", &a);
+    return &a;
+}
+
+void testStatic()
+{
+    int* b = staticVariable();
+    printf("b = %d\n", b);
+    b = staticVariable();
+    printf("b = %d\n", b);
+}
+
+void testSingleton()
+{
+    Singleton* ins = Singleton_instance();
+    Singleton_say(ins);
+    Singleton* ins2 = Singleton_instance();
+    Singleton_say(ins2);
+    printf("ins = %d, ins2 = %d\n", ins, ins2);
 }
 
 int main(int argc, char *argv[])
 {
-    testVirtual();
+    //testVirtual();
+    testSingleton();
 	return 0;
 }
